@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 Thiệp Mời Dự Lễ Tốt Nghiệp 🎓</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen">
+        <h1 class="header-title">THƯ MỜI DỰ LỄ TỐT NGHIỆP</h1>
+        <button id="open-invite-btn">MỞ THIỆP</button>
+    </div>
+
+    <!-- Nhập tên người nhận -->
+    <div id="input-name-screen" style="display:none; flex-direction:column; align-items:center; justify-content:center; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.12); z-index:11;">
+        <label for="recipient-name" style="font-size:1.1em; color:#bfa14a; margin-bottom:0.7em;">Vui lòng nhập tên theo xưng hô với Thịnh! VD:Chị Thoa, Anh Bảo, Dì Hằng , Bạn ...,:</label>
+        <input id="recipient-name" type="text" placeholder="Nhập tên của bạn..." style="padding:0.7em 1.2em; border-radius:18px; border:1.5px solid #e7c873; font-size:1em; margin-bottom:1em; min-width:220px;">
+        <button id="confirm-name-btn" style="padding:0.7em 2.2em; border-radius:18px; background:#fffbe6; color:#bfa14a; border:2px solid #e7c873; font-weight:600; font-size:1em;">Tiếp tục</button>
+    </div>
+
+    <!-- Nhạc nền -->
+    <div class="music-control">
+        <button id="music-toggle" class="music-btn">
+            <i class="fas fa-music"></i>
+        </button>
+        <audio id="background-music" loop>
+            <source src="https://r2.thiepmoionline.com/Moments-to-Memories.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Nút phát nhạc & xem thiệp -->
+    <div id="play-music-screen" style="display:none; flex-direction:column; align-items:center; justify-content:center; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.12); z-index:12;">
+        <button id="play-music-btn"> XEM THIỆP </button>
+    </div>
+
+    <!-- Thank You Page -->
+    <div id="thankyou-page">
+        <div class="thankyou-content">
+            <div class="invitation-title-row">
+                <span class="grad-icon">🎓</span>
+                <span class="invitation-title">Thiệp Mời Dự Lễ Tốt Nghiệp</span>
+                <span class="grad-icon">🎓</span>
+            </div>
+            <div id="personal-greeting" style="font-size:1.08em; color:#a67c1a; font-weight:600; margin-bottom:0.7em;"></div>
+            <p class="invitation-message">
+                
+            </p>
+            <div class="student-info">
+                <div class="student-name my-name-highlight">KIỀU MINH THUẬN</div>
+                <div class="student-details">
+                    Kỹ sư: Công nghệ chế tạo máy<br>
+                    Trường: ĐẠI HỌC CÔNG NGHỆ KỸ THUẬT TP.HCM<br>
+                    Khóa: 2021 - 2025
+                </div>
+            </div>
+            <div class="event-details">
+                <div class="event-datetime-location" style="display: flex; flex-direction: row; align-items: flex-start; justify-content: center; gap: 1.2em; font-weight: 600; color: #bfa14a;">
+                    <div style="display: flex; flex-direction: column; align-items: flex-end; min-width: 110px;">
+                        <span><i class="fa fa-calendar"></i> 16:30</span>
+                        <span style="font-weight:400;">Thứ Sáu, 23/01/2026</span>
+                    </div>
+                    <span style="color:#bfa14a; font-weight:400; font-size:1.2em; align-self:center;">|</span>
+                    <div style="display: flex; flex-direction: column; align-items: flex-start; min-width: 110px;">
+                        <span><i class="fa fa-map-marker"></i> Hội trường khu A</span>
+                        <span style="font-weight:400;">Đại học Công nghệ Kỹ thuật TP.HCM</span>
+                    </div>
+                </div>
+                <div id="countdown-note" style="font-size:0.95em;color:#bfa14a;margin-bottom:0.2em;font-style:italic;">Thời gian còn lại đến lễ tốt nghiệp</div>
+                <div id="countdown" style="margin-top: 0.5em;"></div>
+            </div>
+            <p class="closing-message">
+                Sự hiện diện của <span id="recipient-honor" class="highlight-name"></span> là niềm vinh dự cho Thuận!<br>
+                <span class="signature">Trân trọng thân mời, <span id="recipient-highlight" class="highlight-name">!</span></span>
+            </p>
+            <div class="contact-info">
+                <div><i class="fa fa-phone"></i> 0944864190</div>
+                <div><i class="fa fa-envelope"></i> minhthuankmt13@gmail.com</div>
+                <a href="#" class="social-icon" title="Zalo"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" style="width:1.3em;height:1.3em;vertical-align:middle;"></a>
+                <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-icons">
+        <span class="floating-icon floating-icon1">🎓</span>
+        <span class="floating-icon floating-icon2">🎉</span>
+        <span class="floating-icon floating-icon3">✨</span>
+        <span class="floating-icon floating-icon4">🎈</span>
+        <span class="floating-icon floating-icon5">🎊</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
